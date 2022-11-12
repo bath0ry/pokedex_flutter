@@ -7,14 +7,11 @@ class PokeService {
   final Dio dio;
 
   Future<ModelPoke> getModelPoke() async {
-    const url =
-        "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
+    const url = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/";
 
     try {
       final response = await dio.get(url);
       return ModelPoke.fromJson(response.data);
-    } on DioError catch (_) {
-      throw DioError(requestOptions: RequestOptions(path: url));
     } catch (e) {
       throw Exception("Erro ao pegar pokedex");
     }

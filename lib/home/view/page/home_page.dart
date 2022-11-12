@@ -40,11 +40,7 @@ class _HomePageState extends State<HomePage> {
               itemCount: data.pokemon.length,
               itemBuilder: (context, index) {
                 Pokemon pokemon = data.pokemon[index];
-                return Column(
-                  children: [
-                    Text(pokemon.name),
-                  ],
-                );
+                return Center(child: Text(pokemon.name));
               },
             );
           } else {
